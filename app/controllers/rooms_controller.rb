@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
   def index
+  	@rooms = "My rooms"
   end
 
   def show
