@@ -57,6 +57,7 @@ gem 'paperclip'
 gem 'stripe'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'simple_form'
 
 
 ruby '2.1.2'
