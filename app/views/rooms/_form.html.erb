@@ -1,10 +1,14 @@
-<%= simple_form_for @room do |f| %>
+
+<!-- Adding '@user' here puts @user.id in the user_id col of hte rooms table -->
+
+<%= simple_form_for [@user, @room] do |f| %>
 
 	<%= f.input :title %>
 	<%= f.input :address %>
 	<%= f.input :description %>
+	<%= f.input :image %>
 	<%= f.input :no_of_rooms %>
-	<%= f.input :price_in_pence %>
+	<%= f.input :price_in_pence, label: "Price" %>
 
 	<%= f.button :submit %>
 

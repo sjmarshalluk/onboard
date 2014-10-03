@@ -8,6 +8,7 @@
 		<h3><%= room.title %></h3>
 		<p><%= room.address %></p>
 		<p><%= room.price_in_pence %></p>
+		<p><%= image_tag room.image.url(:thumb) %></p>
 	<% end %>
 
 <% end %>

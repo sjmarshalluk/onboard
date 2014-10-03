@@ -22,7 +22,8 @@
 			<!-- Show user name -->
 			<span><%= current_user.username %></span>
 			<!-- links for users -->
-			<%= link_to "Add a room", new_room_path %>
+			<!-- Update to new room path to carry through user id -->
+			<%= link_to "Add a room", new_user_room_path(current_user.id) %>
 			<%= link_to "Log out", session_path, method: :delete %>
 
 		<% else %>

@@ -17,12 +17,20 @@ class RoomsController < ApplicationController
   
   def new
   	# require_user
-  	@room = Room.new
+  	# used to be this, but need to pass through user id @room = Room.new
+
+  	# Find the user from the URL
+  	@user = User.find(params[:user_id])
+  	@room = @user.rooms.new
   end
 
   def create
   	# require_user
-  	@room = Room.new(room_params)
+  	@user = User.find(params[:user_id])
+  	@room = @user.rooms.new(room_params)
+
+  	@room.price_in_pence = params[:room][:price_in_pence] 
+
   	if @room.save
   		flash[:success] = "All done"
   		redirect_to root_path
@@ -56,9 +64,9 @@ class RoomsController < ApplicationController
   def find_room
   	@room = Room.find(params[:id])
   end
-  
+
   private
   def room_params
-  	params.require(:room).permit(:title, :address, :description, :no_of_rooms, :price_in_pence, :user_id)
+  	params.require(:room).permit(:title, :address, :description, :no_of_rooms, :price_in_pence, :user_id, :image)
   end
 end

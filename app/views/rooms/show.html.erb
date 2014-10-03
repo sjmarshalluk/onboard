@@ -1,4 +1,5 @@
 
+<p><%= image_tag @room.image.url(:large) %></p>
 <h1><%= @room.title %></h1>
 <p><%= @room.address %></p>
 <p><%= @room.description %></p>
@@ -9,7 +10,12 @@
 
 <!--  -->
 
+<% if logged_in? and not current_user == @room.user %>
+	<%= link_to "Book this room", new_room_order_path(@room) %>
+<% end %>
+
 <% if logged_in? and current_user == @room.user %>
 	<!-- (@room) takes the id - look at routes -->
 	<%= link_to "Edit", edit_room_path(@room) %>
 <% end %>
+
