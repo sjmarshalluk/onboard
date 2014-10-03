@@ -1,2 +1,15 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+
+<h1><%= @room.title %></h1>
+<p><%= @room.address %></p>
+<p><%= @room.description %></p>
+<p>£<%= @room.price_in_pence / 100 %> per day</p>
+<p><%= @room.no_of_rooms %> rooms</p>
+<p>To enquire about this room, email <%= mail_to @room.user.email, "#{@room.user.name}" %></p>
+
+
+<!--  -->
+
+<% if logged_in? and current_user == @room.user %>
+	<!-- (@room) takes the id - look at routes -->
+	<%= link_to "Edit", edit_room_path(@room) %>
+<% end %>

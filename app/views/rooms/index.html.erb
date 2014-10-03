@@ -1,8 +1,13 @@
 
+
+
 <% @rooms.each do |room| %>
 
-	<h3><%= room.title %></h3>
-	<p><%= room.address %></p>
-	<p><%= room.price_in_pence %></p>
+	<!-- (room) in backets is because it is looking for a number in the url, - room.id -->
+	<%= link_to room_path(room) do %>
+		<h3><%= room.title %></h3>
+		<p><%= room.address %></p>
+		<p><%= room.price_in_pence %></p>
+	<% end %>
 
 <% end %>
