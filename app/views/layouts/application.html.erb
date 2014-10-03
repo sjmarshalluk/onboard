@@ -8,6 +8,26 @@
 </head>
 <body>
 
+<header>
+	<nav>
+		<%= link_to "Onboard", root_path%>
+		<!-- links for non user -->
+		<%= link_to "Sign up", new_user_path %>
+		<%# link_to "Log in", new_session_path %>
+
+		<!-- links for users -->
+		<%= link_to "Add a room", new_room_path %>
+		<%# link_to "Log out", session_path, method: :delete %>
+	</nav>
+</header>
+
+
+<% flash.each do |key,value| %>
+	<div class="<%= key %>">
+		<p><%= value %></p>
+	</div>
+<% end %>
+
 <%= yield %>
 
 </body>

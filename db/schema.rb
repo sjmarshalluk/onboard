@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002144404) do
+ActiveRecord::Schema.define(version: 20141003091314) do
 
   create_table "rooms", force: true do |t|
     t.string   "title"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20141002144404) do
     t.integer  "price_in_pence"
     t.integer  "no_of_rooms"
     t.integer  "user_id"
-    t.boolean  "is_featured"
+    t.boolean  "is_featured",    default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
