@@ -10,7 +10,12 @@
 
 <header>
 	<nav>
-		<%= link_to "Onboard", root_path%>
+		
+		<div>
+			<%= link_to "Onboard", root_path%>
+		</div>
+
+		<span><%= User.last.name %></span>
 		<!-- links for non user -->
 		<%= link_to "Sign up", new_user_path %>
 		<%# link_to "Log in", new_session_path %>
