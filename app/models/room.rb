@@ -10,4 +10,6 @@ class Room < ActiveRecord::Base
 	#validates :is_featured, presence: true
 	validates :description, length: {minimum: 10}
 
+	belongs_to :user
+
 end

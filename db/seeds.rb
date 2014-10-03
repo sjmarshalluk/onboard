@@ -6,6 +6,29 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Room.all.delete_all
+
+users = User.create (
+	[
+		{
+			name: "Steve Marshall",
+			username: "sjmarshalluk",
+			email: "hello@sjmarshalluk.com",
+			password: "steve1",
+			password_confirmation: "steve1"
+		},
+		{
+			name: "Rob Marshall",
+			username: "rjmarshalluk",
+			email: "hello@rjmarshalluk.com",
+			password: "rob1",
+			password_confirmation: "rob1"
+		}
+
+
+	]
+)
+
 
 rooms = Room.create(
 	[
@@ -16,7 +39,7 @@ rooms = Room.create(
 			no_of_rooms: 5,
 			price_in_pence: 15000,
 			is_featured: false,
-			user_id: 1
+			user_id: users.first.id
 		},
 		{
 			title: "Steve",
@@ -25,7 +48,7 @@ rooms = Room.create(
 			no_of_rooms: 2,
 			price_in_pence: 75,
 			is_featured: true,
-			user_id: 1
+			user_id: users.last.id
 		}
 
 
