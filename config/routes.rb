@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'users/new'
-
-  resources :rooms
-  resources :users
-  root "rooms#index"
+	# sessions gets singular resource as there can only ever be one session
+	resource :session
+  	resources :rooms
+  	resources :users
+  	root "rooms#index"
 
 end

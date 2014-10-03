@@ -15,14 +15,23 @@
 			<%= link_to "Onboard", root_path%>
 		</div>
 
-		<span><%= User.last.name %></span>
-		<!-- links for non user -->
-		<%= link_to "Sign up", new_user_path %>
-		<%# link_to "Log in", new_session_path %>
+		
 
-		<!-- links for users -->
-		<%= link_to "Add a room", new_room_path %>
-		<%# link_to "Log out", session_path, method: :delete %>
+		<% if logged_in? %>
+
+			<!-- Show user name -->
+			<span><%= current_user.username %></span>
+			<!-- links for users -->
+			<%= link_to "Add a room", new_room_path %>
+			<%= link_to "Log out", session_path, method: :delete %>
+
+		<% else %>
+
+			<!-- links for non user -->
+			<%= link_to "Sign up", new_user_path %>
+			<%= link_to "Log in", new_session_path %>
+
+		<% end %>
 	</nav>
 </header>
 

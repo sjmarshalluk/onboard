@@ -1,0 +1,11 @@
+
+
+<!-- we have set rules explicitly as there is no 'new' view for sessions -->
+<%= simple_form_for :session, url: session_path, method: :post do |f| %>
+
+	<%= f.input :email %>
+	<%= f.input :password %>
+
+	<%= f.button :submit, "Log in" %>
+
+<% end %>
